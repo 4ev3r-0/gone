@@ -1,0 +1,20 @@
+[x] Makefile
+
+[x] Startup Stuff
+	[x] elf entrypoint using asm
+	[x] start cmd
+
+[] System Calls
+	[x] syscall
+		[x] exit
+		[] open
+		[] close
+		[] read
+		[x] write
+	[] sysfile
+
+[x] String Functions
+	[x] print
+		[x] println
+		[x] printf
+	[x] strlen
