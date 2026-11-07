@@ -6,7 +6,8 @@
 File extension: .gone (Currently Unimplimented.)
 
 ## 1. Overview
-GONE is 
+G
+ONE is 
 a lightweight programming language designed for preformance and memory efficency.
 
 GONE is developed and designed around C, with some minor assembly when C refuses to support what I want. Its first full release is intended to be able to do both running source code directly and compiling programs into standalone machine-code executables.
@@ -19,7 +20,9 @@ Variables are declared using var, with inferred and explicitly specified types. 
 
 Files provide object-oriented functionality, while tables provide flexible containers for storing and organizing values. Variables and functions are public by default where applicable, with private declarations available when access is intended.
 
+
 ## 3. MEMORY MANAGEMENT
+
 
 Memory management and efficiency is a core part of GONE.
 Ordinary values use automatically managed memory chunks that can grow when needed. And shrink when not. GONE also allows you too request fixed-capacity chunks when more direct control is necessary.
@@ -34,7 +37,9 @@ Programs can be executed directly from source code through the runtime, and the 
 
 The compiler is a separate executable and is built using GCC. The implementation avoids unnecessary dependencies and uses a handwritten lexer and parser.
 
+
 ## 5. RUNTIME FEATURES
+
 
 GONE is intended to have:
 
@@ -50,8 +55,9 @@ GONE is intended to have:
 
 ## 6. DESIGN PRINCIPLES
 
+
 GONE prioritizes low memory usage, performance, simple syntax, and flexibility.
 
 Its runtime should use efficient internal representations without forcing programmers to manually manage ordinary memory allocations.
 
-Features will remain practical and minimal. Scorpi0n should provide the functionality needed to build real programs without introducing unnecessary complexity or dependencies.
+Features will remain practical and minimal. GONE should provide the functionality needed to build real programs without introducing unnecessary complexity or dependencies.
