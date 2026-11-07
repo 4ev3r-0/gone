@@ -41,6 +41,34 @@ void println(const char *s) {
 	print("\n");
 }
 
+void printf(const char *fmt, ...) {
+	__builtin_va_list ap;
+	__builtin_va_start(ap,fmt);
+
+	for (; *fmt; fmt++) {
+		if (*fmt != '%') {
+			syscall(SYS_WRITE, 1, (long)fmt, 1,0,0,0);
+			continue;
+		}
+
+		if (!++fmt) break;
+
+		bool is_long = false;
+		if (*fmt == 'l') is_long = true, fmt++;
+		if (!*fmt) break;
+
+		switch (*fmt) {
+			case 's': {
+				const char *s = __builtin_va_arg(ap, const char *);
+				print(s ? s : "(null)");
+				break;
+			}
+			case 'n': {
+				print("\n");
+			}
+		}
+	}
+}
 // STRING SECT END
 // --------------------------
 
@@ -50,6 +78,7 @@ void println(const char *s) {
 int main(void) {
 	print("Hello World!\n");
 	println("Hello World BUT println INCLUDED!!!!!!!!!!!!!!");
+	printf("Hello World %s%n", "but also printf");
 	return 0;
 }
 
