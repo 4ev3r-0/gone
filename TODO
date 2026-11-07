@@ -18,3 +18,4 @@
 		[x] println
 		[x] printf
 	[x] strlen
+	[x] strcmp

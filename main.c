@@ -32,6 +32,11 @@ size_t strlen(const char *s) {
 	return n;
 }
 
+int strcmp (const char *a, const char *b) {
+	while (*a && *a == *b) a++, b++;
+	return (unsigned char)*a - (unsigned char)*b;
+}
+
 void print(const char *s) {
 	syscall(SYS_WRITE, stdout, (long)s, (long)strlen(s),0,0,0);
 }
@@ -79,6 +84,12 @@ int main(void) {
 	print("Hello World!\n");
 	println("Hello World BUT println INCLUDED!!!!!!!!!!!!!!");
 	printf("Hello World %s%n", "but also printf");
+
+	char *teststr1 = "one";
+	char *teststr2 = "two";
+	char *teststr3 = "one";
+
+	printf("One %s match Two, Two %s match Three, Three %s match One%n", strcmp(teststr1, teststr2) == 0 ? "does" : "doesnt", strcmp(teststr2, teststr3) == 0 ? "does" : "doesnt", strcmp(teststr3, teststr1) == 0 ? "does" : "doesnt");
 	return 0;
 }
 
